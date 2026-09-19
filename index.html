@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomas Ntompeh Jnr — AI Evaluation, Cybersecurity & Editorial</title>
+<meta name="description" content="AI training & model evaluation specialist, cybersecurity SME, technical writer and editor based in Accra, Ghana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e0e;
+    --paper: #f5f2ec;
+    --cyber: #00d4b4;
+    --editorial: #c8973a;
+    --mid: #5a5550;
+    --light: #e8e4dc;
+    --white: #fdfcf9;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  .cursor {
+    width: 10px; height: 10px;
+    background: var(--cyber);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, background 0.3s;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.4s cubic-bezier(0.23,1,0.32,1);
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 3rem;
+    background: rgba(245,242,236,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light);
+  }
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--mid);
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 1px;
+    background: var(--cyber);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 6rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(0,212,180,0.12) 0%, transparent 60%);
+  }
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,180,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,180,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    color: var(--cyber);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.05;
+    position: relative;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--cyber);
+  }
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--cyber);
+    margin: 2rem 0;
+    position: relative;
+  }
+  .hero-sub {
+    font-size: 0.85rem;
+    color: rgba(253,252,249,0.55);
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    max-width: 380px;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 1.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: rgba(253,252,249,0.4);
+    position: relative;
+    line-height: 1.8;
+  }
+  .hero-right {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem;
+    position: relative;
+  }
+  .dual-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .identity-card {
+    border: 1px solid var(--light);
+    padding: 1.6rem 2rem;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+  }
+  .identity-card:hover {
+    border-color: var(--cyber);
+    transform: translateX(6px);
+  }
+  .identity-card.editorial:hover { border-color: var(--editorial); }
+  .identity-card .ic-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .identity-card.cyber .ic-label { color: var(--cyber); }
+  .identity-card.editorial .ic-label { color: var(--editorial); }
+  .identity-card.ai .ic-label { color: var(--cyber); }
+  .identity-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .identity-card p {
+    font-size: 0.78rem;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+  .corner-mark {
+    position: absolute;
+    top: -1px; right: -1px;
+    width: 20px; height: 20px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+  }
+  .cyber .corner-mark, .ai .corner-mark { border-color: var(--cyber); }
+  .editorial .corner-mark { border-color: var(--editorial); }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 3rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--mid);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .scroll-hint::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--mid);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0%, 100% { width: 40px; opacity: 1; }
+    50% { width: 20px; opacity: 0.4; }
+  }
+
+  section { padding: 7rem 3rem; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--mid);
+    letter-spacing: 0.1em;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--light);
+  }
+
+  #about {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
+  }
+  .about-left .big-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+    border-left: 2px solid var(--cyber);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .about-left p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .stat {
+    border-top: 1px solid var(--light);
+    padding-top: 1rem;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--cyber); }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+  .about-right { padding-top: 4rem; }
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light);
+    font-size: 0.82rem;
+  }
+  .info-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .info-val { color: var(--ink); font-weight: 400; text-align: right; }
+  .status-dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--cyber);
+    margin-right: 0.5rem;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  #expertise { background: var(--paper); }
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .expertise-card {
+    border: 1px solid var(--light);
+    background: var(--white);
+    padding: 1.8rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .expertise-card:hover {
+    border-color: var(--cyber);
+    transform: translateY(-3px);
+  }
+  .expertise-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+  }
+  .expertise-card p {
+    font-size: 0.8rem;
+    color: var(--mid);
+    line-height: 1.75;
+  }
+
+  #experience { background: var(--white); }
+  .exp-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid var(--light);
+    flex-wrap: wrap;
+  }
+  .exp-tab {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.8rem 1.4rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    color: var(--mid);
+    transition: all 0.3s;
+    margin-bottom: -1px;
+  }
+  .exp-tab.active {
+    color: var(--ink);
+    border-bottom-color: var(--cyber);
+  }
+  .exp-tab.editorial-tab.active { border-bottom-color: var(--editorial); }
+  .exp-panel { display: none; }
+  .exp-panel.active { display: block; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--light);
+    position: relative;
+  }
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 2.5rem;
+    width: 0; height: calc(100% - 5rem);
+    background: var(--cyber);
+    opacity: 0;
+    transition: all 0.4s;
+  }
+  .exp-item:hover::before { width: 2px; opacity: 1; }
+  .exp-meta { padding-left: 1.5rem; }
+  .exp-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--cyber);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .exp-date.ed { color: var(--editorial); }
+  .exp-company {
+    font-size: 0.78rem;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .exp-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+  }
+  .exp-role-note {
+    font-size: 0.78rem;
+    color: var(--mid);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .exp-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .exp-content li {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.7;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .exp-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--cyber);
+    font-size: 0.7rem;
+  }
+  .ed-bullet li::before { color: var(--editorial); }
+  .exp-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    margin-bottom: 0.8rem;
+  }
+  .badge-cyber { background: rgba(0,212,180,0.12); color: var(--cyber); }
+  .badge-ed { background: rgba(200,151,58,0.12); color: var(--editorial); }
+
+  #projects { background: var(--paper); }
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .project-card {
+    border: 1px solid var(--light);
+    background: var(--white);
+    padding: 2rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .project-card:hover {
+    border-color: var(--editorial);
+    transform: translateY(-3px);
+  }
+  .project-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--editorial);
+    margin-bottom: 0.6rem;
+  }
+  .project-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-bottom: 0.7rem;
+  }
+  .project-card p {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.75;
+  }
+
+  #skills {
+    background: var(--ink);
+    color: var(--white);
+  }
+  #skills .section-title { color: var(--white); }
+  #skills .section-line { background: rgba(255,255,255,0.1); }
+  #skills .section-num { color: rgba(255,255,255,0.3); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .skill-group-title.cyber-title { color: var(--cyber); border-color: rgba(0,212,180,0.3); }
+  .skill-group-title.ed-title { color: var(--editorial); border-color: rgba(200,151,58,0.3); }
+  .skill-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: rgba(253,252,249,0.75);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.35rem 0.8rem;
+    margin: 0.25rem;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .skill-tag:hover { background: rgba(0,212,180,0.12); border-color: var(--cyber); color: var(--cyber); }
+  .skill-tag.ed:hover { background: rgba(200,151,58,0.12); border-color: var(--editorial); color: var(--editorial); }
+  .tools-section {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .tools-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 1.5rem;
+  }
+  .tools-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .tool-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: rgba(253,252,249,0.5);
+  }
+  .tool-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--cyber);
+  }
+  .tool-dot.ed { background: var(--editorial); }
+
+  #education { background: var(--white); }
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .edu-card {
+    border: 1px solid var(--light);
+    padding: 2rem;
+  }
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+  }
+  .edu-school {
+    font-size: 0.85rem;
+    color: var(--mid);
+  }
+
+  #certs { background: var(--paper); }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  .cert-card {
+    border: 1px solid var(--light);
+    background: var(--white);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .cert-card:hover { transform: translateY(-4px); border-color: var(--cyber); }
+  .cert-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyber), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .cert-card:hover::after { transform: scaleX(1); }
+  .cert-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    color: var(--cyber);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .cert-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  #contact {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-left .big-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .contact-left .big-heading em { font-style: italic; color: var(--cyber); }
+  .contact-left p {
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.8;
+    max-width: 380px;
+    margin-bottom: 2.5rem;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 1.2rem; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.85rem;
+    transition: transform 0.3s;
+  }
+  .contact-link:hover { transform: translateX(6px); }
+  .contact-link .cl-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--mid);
+    flex-shrink: 0;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .contact-link:hover .cl-icon { border-color: var(--cyber); color: var(--cyber); }
+  .contact-right { padding-top: 4rem; }
+  .avail-card {
+    background: var(--ink);
+    color: var(--white);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .avail-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(0,212,180,0.1), transparent 60%);
+  }
+  .avail-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--cyber);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .avail-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .avail-card p {
+    font-size: 0.8rem;
+    color: rgba(253,252,249,0.55);
+    line-height: 1.8;
+    position: relative;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(253,252,249,0.35);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+  footer span { color: var(--cyber); }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { min-height: 55vh; }
+    #about, #contact { grid-template-columns: 1fr; gap: 3rem; }
+    .skills-grid, .expertise-grid, .project-grid, .edu-grid { grid-template-columns: 1fr; }
+    .cert-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    section { padding: 5rem 1.5rem; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+  @media (max-width: 600px) {
+    .cert-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .hero-left, .hero-right { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <div class="nav-logo">TN.jnr — Portfolio</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="grid-overlay"></div>
+    <div class="hero-tag">AI Evaluation · Cybersecurity · Editorial</div>
+    <h1 class="hero-name">Thomas<br><em>Ntompeh</em><br>Jnr.</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">AI training &amp; model evaluation specialist, cybersecurity subject-matter expert, technical writer, editor, and publishing professional.</p>
+    <div class="hero-meta">Accra, Ghana · +233 50 498 0673 · tntompeh@gmail.com</div>
+  </div>
+  <div class="hero-right">
+    <div class="dual-identity">
+      <div class="identity-card ai">
+        <div class="corner-mark"></div>
+        <div class="ic-label">// Primary Focus</div>
+        <h3>AI Training &amp; Model Evaluation</h3>
+        <p>LLM response evaluation, rubric scoring, preference ranking, fact-checking, hallucination detection, and multimodal quality review across text, audio, video, and knowledge-work deliverables.</p>
+      </div>
+      <div class="identity-card cyber">
+        <div class="corner-mark"></div>
+        <div class="ic-label">// Security &amp; GRC</div>
+        <h3>Cybersecurity SME</h3>
+        <p>Information Security Analyst at TP Ghana and Regional Vulnerability Management Lead for Teleperformance Global — ISO 27001, PCI DSS, SOC 2, and risk-based remediation.</p>
+      </div>
+      <div class="identity-card editorial">
+        <div class="corner-mark"></div>
+        <div class="ic-label">// Communication</div>
+        <h3>Writer, Editor &amp; Designer</h3>
+        <p>Technical writing, copyediting, book production, typesetting, presentation design, and visual QA with Microsoft Office, Adobe Creative Suite, and Canva.</p>
+      </div>
+    </div>
+    <div class="scroll-hint">Scroll to explore</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-left fade-up">
+    <div class="section-header" style="margin-bottom:2rem;">
+      <span class="section-num">01</span>
+      <h2 class="section-title">About</h2>
+      <div class="section-line"></div>
+    </div>
+    <blockquote class="big-quote">
+      AI quality evaluation, information security, and publishing craft — applied with the same precision.
+    </blockquote>
+    <p>AI training and model evaluation specialist, cybersecurity subject-matter expert, technical writer, editor, and publishing professional with 6+ years of combined experience across AI quality evaluation, information security, GRC, vulnerability management, technical documentation, publishing, teaching, and IT support.</p>
+    <p>Brings 3+ years of project-based experience evaluating generative AI outputs across text, audio, video, and professional knowledge-work deliverables — including LLM response evaluation, rubric-based scoring, comparative ranking, preference evaluation, fact-checking, hallucination detection, prompt analysis, reference-answer development, and evidence-based rationale writing.</p>
+    <p>Currently serves as an Information Security Analyst with TP Ghana and as Regional Vulnerability Management Lead within Teleperformance Global, supporting security governance, ISO 27001/27002, PCI DSS, SOC 2, risk assessment, audit readiness, control validation, vulnerability remediation, and management reporting across an international portfolio.</p>
+    <div class="about-stats">
+      <div class="stat">
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Years combined experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Years AI evaluation work</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">35<span>%</span></div>
+        <div class="stat-label">Fewer recurring findings</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">40<span>%</span></div>
+        <div class="stat-label">Better phishing reporting</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-right fade-up">
+    <div class="info-row">
+      <span class="info-label">Status</span>
+      <span class="info-val"><span class="status-dot"></span>Open to opportunities</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Location</span>
+      <span class="info-val">Accra, Ghana</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Current roles</span>
+      <span class="info-val">InfoSec Analyst — TP Ghana<br>Regional VM Lead — TP Global</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Also</span>
+      <span class="info-val">Cybersecurity Analyst — SoftAfrique<br>Editorial Assistant — Hasford</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Education</span>
+      <span class="info-val">MSc Cybersecurity — King's College London<br>BA Publishing Studies — KNUST</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Focus</span>
+      <span class="info-val">AI Evaluation · GRC · Editorial Design</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Email</span>
+      <span class="info-val">tntompeh@gmail.com</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Phone</span>
+      <span class="info-val">+233 50 498 0673</span>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="section-header fade-up">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Core Expertise</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="expertise-grid fade-up">
+    <div class="expertise-card">
+      <h3>AI Training &amp; Model Evaluation</h3>
+      <p>LLM response evaluation · Generative AI evaluation · Rubric scoring · Preference ranking · Comparative evaluation · Data annotation · Prompt analysis · Reference answers · Response rewriting · Fact-checking · Hallucination detection · Error classification · Safety review · Quality assurance · Human feedback</p>
+    </div>
+    <div class="expertise-card">
+      <h3>Knowledge-Work Evaluation</h3>
+      <p>Document review · Presentation/deck evaluation · Spreadsheet review · PDF review · Layout and spacing assessment · Typography · Visual consistency · Content accuracy · Domain realism · Instruction adherence · Professional polish · Evidence-based scoring</p>
+    </div>
+    <div class="expertise-card">
+      <h3>Cybersecurity &amp; GRC</h3>
+      <p>Information Security · ISMS · Security Risk Assessments · Vulnerability Management · ISO 27001/27002 · PCI DSS · SOC 2 · GISP · Audit Readiness · Control Validation · Remediation Tracking · Incident Response · IAM · Security Awareness</p>
+    </div>
+    <div class="expertise-card">
+      <h3>Writing, Editing &amp; Design</h3>
+      <p>Technical Writing · Developmental / Line / Copyediting · Proofreading · Manuscript Evaluation · Book Design · Publication Layout · Typesetting · Presentation Design · Adobe Creative Suite · Canva · Visual QA</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-header fade-up">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-tabs fade-up">
+    <button class="exp-tab active" onclick="switchTab('ai', this)">AI Evaluation</button>
+    <button class="exp-tab" onclick="switchTab('cyber', this)">Cybersecurity</button>
+    <button class="exp-tab editorial-tab" onclick="switchTab('editorial', this)">Editorial &amp; Design</button>
+  </div>
+
+  <div class="exp-panel active" id="panel-ai">
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-date">Jan 2022 – Present</div>
+        <div class="exp-company">Independent Remote Assignments<br><em style="font-size:0.7rem;color:var(--mid)">Remote · Platforms incl. Outlier, Handshake AI, DataAnnotation</em></div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-badge badge-cyber">Ongoing</div>
+        <h3>AI Training &amp; Data Quality Specialist</h3>
+        <ul>
+          <li>Evaluate AI-generated responses for factual accuracy, reasoning quality, relevance, completeness, instruction adherence, safety, usefulness, tone, coherence, and natural communication</li>
+          <li>Apply detailed evaluation rubrics to compare candidate responses, assign preference rankings, identify stronger outputs, and write concise evidence-based rationales</li>
+          <li>Review AI-generated professional deliverables — documents, presentations, spreadsheets, PDFs — for content quality, structure, layout, visual consistency, accuracy, and professional polish</li>
+          <li>Perform structured fact-checking and source verification; identify unsupported claims, contradictions, hallucinations, logical inconsistencies, bias, and policy concerns</li>
+          <li>Analyse prompts for ambiguity, missing constraints, and conflicting instructions; develop or refine reference responses and rewrites</li>
+          <li>Edit and standardise AI-generated content for grammar, terminology, tone, audience fit, logical flow, and publication-quality presentation</li>
+          <li>Review multimodal AI outputs (audio and video) for speech quality, synchronisation, temporal consistency, visual artefacts, and prompt alignment</li>
+          <li>Apply domain expertise in cybersecurity, IT, publishing, editing, and technical communication when evaluating specialist AI responses</li>
+          <li>Conduct final QC against project rubrics, formatting requirements, task constraints, and supporting evidence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-panel" id="panel-cyber">
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-date">2025 – Present</div>
+        <div class="exp-company">Teleperformance — TP Ghana / Teleperformance Global<br>Accra, Ghana</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-badge badge-cyber">Current</div>
+        <h3>Information Security Analyst — TP Ghana</h3>
+        <div class="exp-role-note">Also: Regional Vulnerability Management Lead — Teleperformance Global (2025 – Present)</div>
+        <ul>
+          <li>Support and maintain TP Ghana's ISMS, translating global security requirements, client obligations, and corporate policies into practical controls and remediation actions</li>
+          <li>Conduct business information-security and Security Risk Assessments; identify control gaps; recommend proportionate safeguards; coordinate risk treatment with stakeholders</li>
+          <li>Support GRC and compliance covering ISO 27001/27002, PCI DSS, SOC 2, GISP, client contractual requirements, and contact-centre security obligations</li>
+          <li>Lead vulnerability management for a regional portfolio spanning the UK, South Africa, Ghana, Nigeria, Rwanda, and GCC countries</li>
+          <li>Review vulnerability findings by severity, exploitability, asset exposure, business criticality, patch availability, and compensating controls</li>
+          <li>Maintain audit-ready security evidence and compliance documentation for internal, client, and global reviews</li>
+          <li>Liaise with Global Audit, Trust &amp; Safety, IT, and management on investigations, risks, remediation, and control weaknesses</li>
+          <li>Produce management-ready risk assessments, remediation updates, evidence packages, escalations, and status reports</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-date">Dec 2024 – Present</div>
+        <div class="exp-company">SoftAfrique LLC<br>Remote — New Jersey, USA</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-badge badge-cyber">Current</div>
+        <h3>Cybersecurity Analyst</h3>
+        <ul>
+          <li>Monitor security logs, endpoint alerts, and suspicious activity using Splunk, Wazuh EDR, and Microsoft Defender; support triage, investigation, containment, and remediation</li>
+          <li>Conduct vulnerability assessments using Qualys, Nessus, and related tools — prioritising findings and tracking remediation that contributed to a <strong>35%</strong> reduction in recurring findings</li>
+          <li>Perform access reviews, investigate policy violations, support least-privilege principles, and contribute to security procedures and incident reports</li>
+          <li>Research emerging threats using frameworks including MITRE ATT&amp;CK and the Cyber Kill Chain</li>
+          <li>Design and deliver cybersecurity awareness and technical training that contributed to a <strong>40%</strong> improvement in phishing reporting</li>
+          <li>Translate complex cybersecurity topics into clear training materials, presentations, advisories, and management-ready documentation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-date">Oct 2023 – Nov 2024</div>
+        <div class="exp-company">SoftAfrique LLC<br>Remote — New Jersey, USA</div>
+      </div>
+      <div class="exp-content">
+        <h3>IT Support Officer</h3>
+        <ul>
+          <li>Provided first-line remote technical support for Windows, Microsoft 365, user accounts, and connectivity — resolving approximately <strong>85%</strong> of requests at first contact</li>
+          <li>Installed and configured business applications; administered user accounts, password resets, and access requests</li>
+          <li>Identified and escalated recurring or security-relevant technical issues with clear supporting evidence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-panel" id="panel-editorial">
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-date ed">Mar 2023 – Present</div>
+        <div class="exp-company">Hasford Publications<br>Kumasi, Ghana · Part-time</div>
+      </div>
+      <div class="exp-content ed-bullet">
+        <div class="exp-badge badge-ed">Ongoing</div>
+        <h3>Technical &amp; Editorial Assistant</h3>
+        <ul>
+          <li>Write, edit, and quality-review technical books, educational publications, children's books, journals, storybooks, and digital content</li>
+          <li>Perform developmental editing, line editing, copyediting, and proofreading against house style and publication quality standards</li>
+          <li>Prepare publication-ready books through formatting, typesetting, page-layout development, visual QC, and book design</li>
+          <li>Use Adobe InDesign, Adobe Photoshop, Microsoft Word, PowerPoint, and Canva</li>
+          <li>Develop professional presentations, publication layouts, graphic assets, covers, and educational materials</li>
+          <li>Coordinate with authors, editors, illustrators, and printers to manage revisions and production schedules</li>
+          <li>Develop cybersecurity-themed publications and digital-literacy materials for non-technical audiences</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-date ed">Oct 2022 – Sep 2023</div>
+        <div class="exp-company">KNUST — Department of Publishing Studies<br>Kumasi, Ghana</div>
+      </div>
+      <div class="exp-content ed-bullet">
+        <h3>Teaching Assistant</h3>
+        <ul>
+          <li>Supported teaching in Copyediting, Multimedia Publishing, and Communication for Editors</li>
+          <li>Edited, typeset, proofread, and quality-reviewed academic materials; supported research and article development</li>
+          <li>Mentored students in manuscript preparation, editorial standards, publishing workflows, and project execution</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-date ed">May 2021 – Aug 2021</div>
+        <div class="exp-company">Design Press</div>
+      </div>
+      <div class="exp-content ed-bullet">
+        <h3>Editor &amp; Production Assistant</h3>
+        <ul>
+          <li>Edited, proofread, formatted, typeset, and prepared manuscripts and publication materials for production</li>
+          <li>Performed production checks and final quality reviews against editorial standards and house style</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-header fade-up">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Selected Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="project-grid fade-up">
+    <div class="project-card">
+      <div class="project-label">Independent Authorship</div>
+      <h3>Original Books &amp; Short Stories</h3>
+      <p>Author of books and short stories — developing and revising original manuscripts for narrative consistency, structure, clarity, voice, reader engagement, and publication readiness.</p>
+    </div>
+    <div class="project-card">
+      <div class="project-label">Editorial &amp; Production</div>
+      <h3>Fade Away — Dr Michael Ato Essuman</h3>
+      <p>Provided developmental editing, line editing, copyediting, proofreading, formatting, typesetting, book design, and publication-production support.</p>
+    </div>
+    <div class="project-card">
+      <div class="project-label">Educational Publishing</div>
+      <h3>Excellence Publication &amp; Stationery Supply</h3>
+      <p>Edited educational textbooks and supported editorial quality control, content consistency, formatting, layout, and publication preparation.</p>
+    </div>
+    <div class="project-card">
+      <div class="project-label">Consulting</div>
+      <h3>Publishing &amp; Editorial Consulting</h3>
+      <p>Advise authors and organisations on manuscript development, editorial workflows, content structure, audience suitability, book production, visual presentation, and publication quality.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-header fade-up">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid fade-up">
+    <div class="skill-group">
+      <div class="skill-group-title cyber-title">// AI &amp; Model Evaluation</div>
+      <div>
+        <span class="skill-tag">LLM Evaluation</span>
+        <span class="skill-tag">Generative AI Evaluation</span>
+        <span class="skill-tag">Rubric Scoring</span>
+        <span class="skill-tag">Preference Ranking</span>
+        <span class="skill-tag">Data Annotation</span>
+        <span class="skill-tag">Prompt Analysis</span>
+        <span class="skill-tag">Fact-Checking</span>
+        <span class="skill-tag">Hallucination Detection</span>
+        <span class="skill-tag">Error Classification</span>
+        <span class="skill-tag">Safety Review</span>
+        <span class="skill-tag">Reference Responses</span>
+        <span class="skill-tag">Response Rewriting</span>
+        <span class="skill-tag">Multimodal QA</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title cyber-title">// Cybersecurity, GRC &amp; VM</div>
+      <div>
+        <span class="skill-tag">ISMS</span>
+        <span class="skill-tag">ISO 27001/27002</span>
+        <span class="skill-tag">PCI DSS</span>
+        <span class="skill-tag">SOC 2</span>
+        <span class="skill-tag">Security Risk Assessment</span>
+        <span class="skill-tag">Vulnerability Management</span>
+        <span class="skill-tag">Audit Evidence</span>
+        <span class="skill-tag">Control Validation</span>
+        <span class="skill-tag">Incident Response</span>
+        <span class="skill-tag">IAM</span>
+        <span class="skill-tag">Security Awareness</span>
+        <span class="skill-tag">Policy &amp; Procedure Writing</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title ed-title">// Writing &amp; Editorial</div>
+      <div>
+        <span class="skill-tag ed">Technical Writing</span>
+        <span class="skill-tag ed">Developmental Editing</span>
+        <span class="skill-tag ed">Line Editing</span>
+        <span class="skill-tag ed">Copyediting</span>
+        <span class="skill-tag ed">Proofreading</span>
+        <span class="skill-tag ed">Manuscript Evaluation</span>
+        <span class="skill-tag ed">Editorial QA</span>
+        <span class="skill-tag ed">Research Synthesis</span>
+        <span class="skill-tag ed">Style Guides</span>
+        <span class="skill-tag ed">Technical Documentation</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title ed-title">// Design &amp; Document Production</div>
+      <div>
+        <span class="skill-tag ed">Adobe InDesign</span>
+        <span class="skill-tag ed">Adobe Photoshop</span>
+        <span class="skill-tag ed">Canva</span>
+        <span class="skill-tag ed">Book Design</span>
+        <span class="skill-tag ed">Typesetting</span>
+        <span class="skill-tag ed">Page Layout</span>
+        <span class="skill-tag ed">Presentation Design</span>
+        <span class="skill-tag ed">Typography</span>
+        <span class="skill-tag ed">Visual Hierarchy</span>
+        <span class="skill-tag ed">Print &amp; Digital Production</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tools-section fade-up">
+    <div class="tools-title">// Security Operations &amp; Systems</div>
+    <div class="tools-row">
+      <div class="tool-item"><span class="tool-dot"></span>Splunk</div>
+      <div class="tool-item"><span class="tool-dot"></span>Wazuh EDR</div>
+      <div class="tool-item"><span class="tool-dot"></span>Microsoft Defender</div>
+      <div class="tool-item"><span class="tool-dot"></span>Symantec Endpoint</div>
+      <div class="tool-item"><span class="tool-dot"></span>Qualys</div>
+      <div class="tool-item"><span class="tool-dot"></span>Nessus</div>
+      <div class="tool-item"><span class="tool-dot"></span>Burp Suite</div>
+      <div class="tool-item"><span class="tool-dot"></span>OWASP ZAP</div>
+      <div class="tool-item"><span class="tool-dot"></span>Wireshark</div>
+      <div class="tool-item"><span class="tool-dot"></span>Nmap</div>
+      <div class="tool-item"><span class="tool-dot"></span>pfSense</div>
+      <div class="tool-item"><span class="tool-dot"></span>Suricata</div>
+      <div class="tool-item"><span class="tool-dot"></span>Snort</div>
+      <div class="tool-item"><span class="tool-dot"></span>Cisco Umbrella</div>
+      <div class="tool-item"><span class="tool-dot"></span>Tanium</div>
+      <div class="tool-item"><span class="tool-dot"></span>CrowdStrike</div>
+      <div class="tool-item"><span class="tool-dot"></span>Zscaler</div>
+      <div class="tool-item"><span class="tool-dot"></span>Active Directory</div>
+      <div class="tool-item"><span class="tool-dot"></span>Microsoft Azure</div>
+      <div class="tool-item"><span class="tool-dot"></span>AWS Fundamentals</div>
+      <div class="tool-item"><span class="tool-dot"></span>Docker</div>
+      <div class="tool-item"><span class="tool-dot"></span>Git / GitHub</div>
+      <div class="tool-item"><span class="tool-dot"></span>Jira</div>
+      <div class="tool-item"><span class="tool-dot"></span>VMware / VirtualBox</div>
+    </div>
+    <div class="tools-title" style="margin-top:1.5rem;">// Productivity &amp; AI Tools</div>
+    <div class="tools-row">
+      <div class="tool-item"><span class="tool-dot ed"></span>Microsoft 365</div>
+      <div class="tool-item"><span class="tool-dot ed"></span>Google Workspace</div>
+      <div class="tool-item"><span class="tool-dot ed"></span>ChatGPT</div>
+      <div class="tool-item"><span class="tool-dot ed"></span>Claude</div>
+      <div class="tool-item"><span class="tool-dot ed"></span>NotebookLM</div>
+      <div class="tool-item"><span class="tool-dot ed"></span>Gemini</div>
+      <div class="tool-item"><span class="tool-dot ed"></span>Cursor</div>
+      <div class="tool-item"><span class="tool-dot ed"></span>Notion</div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-header fade-up">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-grid fade-up">
+    <div class="edu-card">
+      <div class="edu-degree">MSc Cybersecurity</div>
+      <div class="edu-school">King's College London</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">BA Publishing Studies</div>
+      <div class="edu-school">Kwame Nkrumah University of Science and Technology (KNUST)</div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="section-header fade-up">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Certifications &amp; Training</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="cert-grid fade-up">
+    <div class="cert-card">
+      <div class="cert-icon">CompTIA</div>
+      <div class="cert-name">Security+</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">ISACA</div>
+      <div class="cert-name">CISA</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">ISO</div>
+      <div class="cert-name">ISO/IEC 27701 Lead Auditor</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">Google</div>
+      <div class="cert-name">Google IT Support Professional Certificate</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">ISO</div>
+      <div class="cert-name">ISO 27001 A Fundamentals</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">Qualys</div>
+      <div class="cert-name">Qualys Vulnerability Manager</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">IBM</div>
+      <div class="cert-name">IBM Introduction to Cybersecurity</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">Foundational</div>
+      <div class="cert-name">Cybersecurity Foundational Certificate</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">Network</div>
+      <div class="cert-name">Networking Fundamentals</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">Microsoft</div>
+      <div class="cert-name">Microsoft 365 Productivity Training</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">Awareness</div>
+      <div class="cert-name">Cybersecurity Awareness &amp; Threat Simulation</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-left fade-up">
+    <div class="section-header" style="margin-bottom:1.5rem;">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="big-heading">Let's work<br><em>together.</em></h2>
+    <p>Open to AI evaluation, cybersecurity / GRC, technical writing, and editorial roles — remote or based in Accra. Happy to discuss how this mix of AI quality work, security expertise, and publishing craft can support your team.</p>
+    <div class="contact-links">
+      <a href="mailto:tntompeh@gmail.com" class="contact-link">
+        <div class="cl-icon">@</div>
+        tntompeh@gmail.com
+      </a>
+      <a href="tel:+233504980673" class="contact-link">
+        <div class="cl-icon">☏</div>
+        +233 50 498 0673
+      </a>
+    </div>
+  </div>
+  <div class="contact-right fade-up">
+    <div class="avail-card">
+      <div class="avail-label"><span class="status-dot" style="background:var(--cyber)"></span>Availability</div>
+      <h3>Open to<br>New Roles</h3>
+      <p>Actively interested in AI training &amp; evaluation, information security / GRC, vulnerability management, technical writing, and editorial / publishing opportunities.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Thomas Ntompeh Jnr</div>
+  <div>Built with <span>precision</span> — Accra, Ghana</div>
+  <div>AI Evaluation · Security · Editorial</div>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
+  });
+  function animateRing() {
+    rx += (mx - rx - 18) * 0.12;
+    ry += (my - ry - 18) * 0.12;
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  function switchTab(type, btn) {
+    document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + type).classList.add('active');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        const children = e.target.querySelectorAll('.fade-up');
+        children.forEach((child, i) => {
+          setTimeout(() => child.classList.add('visible'), i * 120);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
