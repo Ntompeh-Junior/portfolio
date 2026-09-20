@@ -1,0 +1,311 @@
+{
+  "last_updated": "2026-09-20",
+  "scan_date": "2026-09-20",
+  "candidate": {
+    "name": "Thomas Ntompeh Jnr",
+    "location": "Accra, Ghana",
+    "focus": [
+      "AI evaluation / training",
+      "Cybersecurity / GRC / vulnerability management",
+      "Technical writing / editorial / document evaluation",
+      "Remote consulting / expert networks"
+    ]
+  },
+  "sources_checked": [
+    "OpenTrain AI job listings",
+    "Mercor work.mercor.com listings",
+    "24-MAG / Jobgether aggregators",
+    "Handshake AI opportunities",
+    "GLG expert network pages",
+    "Scale Up / Hiring.Camp GRC listings",
+    "Public remote cyber/GRC job aggregators"
+  ],
+  "opportunities": [
+    {
+      "id": "24mag-cyber-it-grc-specialist-2026-09",
+      "organization": "24-MAG LLC",
+      "position": "Cybersecurity & IT GRC Specialist (document / deck evaluation)",
+      "url": "https://www.remoterocketship.com/us/company/24-mag/jobs/cybersecurity-it-grc-specialist-new-york-remote/",
+      "alternate_urls": [
+        "https://getjob.pragatishilclasses.org/job/remote-cybersecurity-it-grc-specialist-70110hour-1",
+        "https://jobgether.com/offer/6a8e096f1de6f4542a5af7e0-remote-cybersecurity-it-grc-specialist----70--110-hour"
+      ],
+      "date_posted": "2026-09-15",
+      "location": "Listed as New York, USA (work fully remote)",
+      "remote_status": "Fully remote; part-time independent contractor",
+      "compensation": "$70–$110/hour",
+      "required_experience": [
+        "5+ years in cybersecurity, IT GRC, information security, IT risk, IT audit, or closely related field",
+        "Experience as GRC / IT Risk / Cybersecurity / Information Security Analyst or similar",
+        "Experience developing or reviewing security assessments, risk analyses, control documentation, audit materials",
+        "Professional English fluency; strong written feedback skills",
+        "High proficiency with Microsoft Office / Google Workspace; advanced PowerPoint / Google Slides"
+      ],
+      "required_technologies": [
+        "Microsoft Office",
+        "Google Workspace",
+        "PowerPoint / Google Slides",
+        "Spreadsheets for risk / control analysis"
+      ],
+      "why_it_matches": "Closest public match to the cyber + GRC + document/deck evaluation niche. Aligns with Information Security Analyst / Regional Vulnerability Management Lead work (ISO 27001/27002, PCI DSS, SOC 2, risk assessment, management reporting) plus AI-era evaluation of professional work products. Master's from King's College London is listed as advantageous.",
+      "missing_qualifications": [
+        "Whether Ghana-based contractors are eligible is not explicitly stated on the listing (posted under New York / remote; H-1B/STEM OPT support unavailable).",
+        "Combined experience is framed as 6+ years across domains; pure cyber/GRC tenure may be short of a strict 5+ cyber-only reading depending on how they count roles."
+      ],
+      "recommended_next_action": "Review the live application page and apply if location eligibility confirms international contractors. Emphasize GRC frameworks, Qualys VM reporting, audit-ready documentation, and prior AI evaluation of professional deliverables. Do not use employer-confidential materials.",
+      "priority": "high",
+      "status": "active_candidate"
+    },
+    {
+      "id": "opentrain-ai-writing-response-evaluator-cmu89m790002n09gmpnerxv9n",
+      "organization": "OpenTrain AI",
+      "position": "AI Writing Response Evaluator",
+      "url": "https://www.opentrain.ai/jobs/ai-writing-response-evaluator--cmu89m790002n09gmpnerxv9n/",
+      "date_posted": "2026-09-19",
+      "location": "Remote; eligible country list includes Ghana",
+      "remote_status": "100% remote contractor; asynchronous",
+      "compensation": "$90–$140/hour",
+      "required_experience": [
+        "Professional experience as journalist, editor, fact-checker, technical writer, or published author",
+        "Experience editing or fact-checking against a style guide / editorial standard",
+        "Native or near-native written English",
+        "Completed university degree from an institution in the US, Canada, UK, Ireland, Australia, or New Zealand",
+        "20+ hours/week expected"
+      ],
+      "required_technologies": [
+        "Digital content review / evaluation platforms (unspecified)"
+      ],
+      "why_it_matches": "Ghana is explicitly eligible. King's College London MSc satisfies the UK degree requirement. Strong fit with BA Publishing Studies, editorial/fact-checking background, and 3+ years AI evaluation (rubric scoring, preference ranking, hallucination detection) on platforms such as Outlier, Handshake AI, and DataAnnotation.",
+      "missing_qualifications": [
+        "Listing emphasizes journalism/editorial titles; cybersecurity title alone is weaker than publishing + AI eval evidence—application materials should lead with editorial/AI evaluation.",
+        "20+ hours/week may conflict with full-time Teleperformance / TP Ghana schedule unless evenings/weekends are viable."
+      ],
+      "recommended_next_action": "Create/update OpenTrain profile today and apply with portfolio + AI evaluation samples (non-confidential). Lead with publishing/editorial + LLM evaluation experience.",
+      "priority": "high",
+      "status": "active_candidate"
+    },
+    {
+      "id": "opentrain-ai-written-response-evaluator-assessor-cmu89m6ue002d09gm7f1i0s03",
+      "organization": "OpenTrain AI",
+      "position": "AI Written Response Evaluator and Assessor",
+      "url": "https://www.opentrain.ai/jobs/ai-written-response-evaluator-and-assessor--cmu89m6ue002d09gm7f1i0s03/",
+      "date_posted": "Not explicitly shown as a discrete calendar date on the page body; related writing-evaluator cluster includes Sep 19, 2026 postings",
+      "location": "Remote; eligible country list includes Ghana",
+      "remote_status": "100% remote contractor; 20+ hours/week",
+      "compensation": "$90–$140/hour",
+      "required_experience": [
+        "First-language or fully equivalent written English",
+        "Experience marking, grading, examining, or reviewing written work with rubrics",
+        "Background in assessment design, instructional design, peer review, thesis supervision, or academic writing support (listed as requirement themes)",
+        "Degree from US, Canada, UK, Ireland, Australia, or New Zealand"
+      ],
+      "required_technologies": [
+        "Digital content review platforms"
+      ],
+      "why_it_matches": "Ghana-eligible remote AI writing evaluation. Rubric-based scoring and rationale writing map directly to existing AI evaluation practice. UK Master's covers the degree geography rule.",
+      "missing_qualifications": [
+        "Academic assessment / instructional-design framing may be stronger than industry AI-eval framing unless application highlights rubric design and grading experience explicitly.",
+        "Exact original post date not verified beyond related cluster dates."
+      ],
+      "recommended_next_action": "Apply after or alongside the OpenTrain AI Writing Response Evaluator role if hours allow; treat as a sibling listing rather than a separate career track.",
+      "priority": "medium",
+      "status": "active_candidate"
+    },
+    {
+      "id": "opentrain-technical-documentation-specialist-cmtlba4n4000j0aj64z4mduqy",
+      "organization": "OpenTrain AI",
+      "position": "Technical Documentation Specialist",
+      "url": "https://www.opentrain.ai/jobs/technical-documentation-specialist--cmtlba4n4000j0aj64z4mduqy/",
+      "date_posted": "2026-09-03",
+      "location": "Worldwide remote",
+      "remote_status": "100% remote contractor; 20+ hours/week",
+      "compensation": "$90–$140/hour",
+      "required_experience": [
+        "At least 3 years professional developer or product documentation experience",
+        "Ability to write API references, developer guides, tutorials, or release notes",
+        "Technical writing, information architecture, editing",
+        "Ability to apply Microsoft, Google, or custom style guides"
+      ],
+      "required_technologies": [
+        "Markdown",
+        "Git",
+        "CI/CD",
+        "Docs-as-code workflows"
+      ],
+      "why_it_matches": "Worldwide eligibility and high hourly rate. Publishing studies + technical writing/editing of security training materials and management documentation provide adjacent signal.",
+      "missing_qualifications": [
+        "Hands-on developer/API documentation and docs-as-code (Markdown/Git/CI/CD) experience is required and is not evidenced as a primary strength on the current portfolio.",
+        "Role is writing-intensive creation, not only evaluation."
+      ],
+      "recommended_next_action": "Apply only if you can honestly demonstrate 3+ years developer/product docs and docs-as-code samples; otherwise skip and keep monitoring adjacent OpenTrain writing/eval roles.",
+      "priority": "medium",
+      "status": "stretch"
+    },
+    {
+      "id": "handshake-ai-security-engineer-fellowship",
+      "organization": "Handshake AI",
+      "position": "Security Engineer (AI Fellowship / LLM evaluation)",
+      "url": "https://joinhandshake.com/ai/opportunities/cyber-security-expert",
+      "date_posted": "Not stated on page (evergreen fellowship listing)",
+      "location": "Remote (asynchronous; no country restriction stated on the page)",
+      "remote_status": "Remote, part-time, flexible hours; project placement depends on availability",
+      "compensation": "Up to $80/hour depending on the project",
+      "required_experience": [
+        "At least 3 years professional experience in security engineering or offensive security",
+        "Example titles: Security Engineer, Penetration Tester, Red Team, Malware Analyst, Threat Hunter, Vulnerability Researcher, Security Consultant",
+        "Hands-on with one or more of: Burp Suite, Nmap, Wireshark, Metasploit, BloodHound, Impacket, Nessus, Hashcat"
+      ],
+      "required_technologies": [
+        "Burp Suite",
+        "Nmap",
+        "Wireshark",
+        "Metasploit",
+        "BloodHound",
+        "Impacket",
+        "Nessus",
+        "Hashcat"
+      ],
+      "why_it_matches": "Remote AI research community work evaluating LLM responses in cybersecurity. Nessus experience and vulnerability management background provide a partial bridge; prior Handshake AI evaluation experience is relevant.",
+      "missing_qualifications": [
+        "Listing centers security engineering / offensive security titles rather than GRC / information security analyst / vulnerability management lead.",
+        "Most named tools are offensive/security-engineering stack; Qualys/Splunk/Wazuh are not listed as substitutes."
+      ],
+      "recommended_next_action": "If already on Handshake AI, check whether this domain is open and complete any security-domain onboarding. Do not overclaim red-team experience.",
+      "priority": "medium",
+      "status": "stretch"
+    },
+    {
+      "id": "glg-expert-network-cyber-grc",
+      "organization": "GLG (Gerson Lehrman Group)",
+      "position": "Expert Network Consultant — Cybersecurity / GRC / Vulnerability Management (on-demand calls & projects)",
+      "url": "https://glg.com/for-experts",
+      "alternate_urls": [
+        "https://membership.glgresearch.com/onboarding/"
+      ],
+      "date_posted": "Ongoing network (not a dated job post)",
+      "location": "International / remote expert consultations",
+      "remote_status": "Remote by design (calls, surveys, research); project-based",
+      "compensation": "Expert sets own hourly rate (rate not published on the public join pages reviewed)",
+      "required_experience": [
+        "Deep practitioner expertise clients will pay to consult",
+        "Compliance onboarding and standard expert agreement"
+      ],
+      "required_technologies": [],
+      "why_it_matches": "High-value international expert consulting path for Teleperformance / TP Ghana security operations, ISO/PCI/SOC 2 GRC, and regional vulnerability management leadership—without requiring US employment authorization.",
+      "missing_qualifications": [
+        "No guaranteed volume; income depends on client demand and matching.",
+        "Employer conflict / confidentiality policies must be cleared before accepting briefings."
+      ],
+      "recommended_next_action": "Register as a GLG expert (and consider Guidepoint / AlphaSights later). Set a rate consistent with specialist cyber/GRC consulting; complete compliance training; list Accra + remote availability.",
+      "priority": "high",
+      "status": "active_candidate"
+    },
+    {
+      "id": "scaleup-senior-grc-consultant-remote",
+      "organization": "Scale Up Recruiting Partners (client: US cyber/compliance consulting startup)",
+      "position": "Senior GRC Consultant",
+      "url": "https://hiring.camp/job/zmXGw9",
+      "alternate_urls": [
+        "https://jobsca.org/consulting_quebec-c117954/2026-09-scale-up-recruiting-partners_i4208966916"
+      ],
+      "date_posted": "Hiring.Camp source page shows 2026-07-06; aggregator mirrors also appeared in September 2026 feeds",
+      "location": "LATAM preferred on Hiring.Camp posting; other mirrors say 100% remote with U.S. client hours",
+      "remote_status": "100% remote contractor; full-time; U.S. business hours",
+      "compensation": "Not stated on sources reviewed",
+      "required_experience": [
+        "5–7+ years hands-on GRC, compliance, or information security audits",
+        "Prior consulting / professional services managing multiple client engagements",
+        "Strong SOC 2 Type I/II and ISO 27001/27002 expertise",
+        "Additional framework experience (GDPR, CCPA/CPRA, or HIPAA)",
+        "Professional English for U.S. client meetings"
+      ],
+      "required_technologies": [
+        "Vanta",
+        "Drata (or similar continuous GRC platforms)",
+        "NIST 800-30 risk assessment methodology",
+        "Cloud security / IAM / CI/CD familiarity"
+      ],
+      "why_it_matches": "Strong framework overlap (SOC 2, ISO 27001/27002), audit readiness, risk assessment, documentation/technical writing, and CISA listed as nice-to-have.",
+      "missing_qualifications": [
+        "LATAM location preference on the primary Hiring.Camp post—Ghana may be out of scope.",
+        "Full-time U.S.-hours consulting + multi-client ownership; Vanta/Drata hands-on not evidenced.",
+        "5–7+ years pure GRC consulting may exceed current tenure."
+      ],
+      "recommended_next_action": "Monitor only unless a mirror explicitly opens Africa/EMEA. If applying, confirm geography first; do not invest heavy prep until eligibility is confirmed.",
+      "priority": "low",
+      "status": "monitor"
+    }
+  ],
+  "ignored_today": [
+    {
+      "id": "mercor-cybersecurity-expert-worlds-closed",
+      "organization": "Mercor",
+      "position": "Cybersecurity Expert (scenario / rubric authoring)",
+      "url": "https://work.mercor.com/jobs/list_AAABn9RRVR62EOpM2ABFNqLe/cybersecurity-expert",
+      "reason": "Listing states it is not currently accepting applications. Ideal qualifications also target 5+ years as security engineer/CISO at major firms (e.g., Mandiant, CrowdStrike) plus CISSP/CISM preference."
+    },
+    {
+      "id": "mercor-risk-compliance-grc-safety-closed",
+      "organization": "Mercor",
+      "position": "Risk & Compliance (GRC) – Safety Specialist",
+      "url": "https://work.mercor.com/jobs/list_AAABmX3ODpsG1L0BYbFO5YTK/risk-compliance-grc-safety-specialist",
+      "reason": "Not accepting applications; location restricted to US, UK, Canada."
+    },
+    {
+      "id": "kpmg-us-qualys-vm-analyst-usa-only",
+      "organization": "KPMG US (contractor via public aggregators)",
+      "position": "Vulnerability Management Analyst (Qualys)",
+      "url": "https://jobgrow.pragatishilclasses.org/job/remote-vulnerability-management-analyst-2",
+      "reason": "Remote but open only to USA-authorized candidates; no employment-based visa sponsorship. Skill-relevant (Qualys) but not actionable from Ghana."
+    },
+    {
+      "id": "covenant-hr-grc-tprm-in-ph-only",
+      "organization": "Covenant HR",
+      "position": "Cybersecurity GRC & Third-Party Risk Consultant",
+      "url": "https://jobboard.co.in/cybersecurity-grc_mumbai-c278320/2026-09-covenant-hr_i4209809375",
+      "reason": "Contract limited to India or Philippines; OneTrust / Okta Identity Governance preferred."
+    },
+    {
+      "id": "outlier-offensive-cybersecurity-expert-usa",
+      "organization": "Outlier",
+      "position": "Cybersecurity Expert (offensive / CTF-style AI training)",
+      "url": "https://outlier.ai/experts/cybersecurity-r150v8m",
+      "reason": "Requires 4+ years penetration testing/red teaming, OSCP-class certs preferred, Terraform/Ansible; U.S.-oriented posting. Misaligned with GRC/VM analyst profile."
+    },
+    {
+      "id": "opentrain-journalist-writer-ai-eval-geo-restricted",
+      "organization": "OpenTrain AI",
+      "position": "Journalist and Writer for AI Writing Evaluation",
+      "url": "https://www.opentrain.ai/jobs/journalist-writer--cmu82tste00000agm2e5st8lh/",
+      "reason": "Posted 2026-09-19 and skill-adjacent, but applicant countries exclude Ghana (UK, US, Canada, Germany, Australia, India, Ireland, Netherlands, Greenland, Mexico, Cuba)."
+    },
+    {
+      "id": "opentrain-technical-writer-editor-us-ca-uk",
+      "organization": "OpenTrain AI",
+      "position": "Technical Writer and AI Response Evaluator",
+      "url": "https://www.opentrain.ai/jobs/technical-writer-editor--cmu5ew3h800080agmhbv9i4qm/",
+      "reason": "Posted 2026-09-17; limited to United States, Canada, United Kingdom."
+    },
+    {
+      "id": "opentrain-product-documentation-ai-eval-pm-required",
+      "organization": "OpenTrain AI",
+      "position": "Product Documentation AI Evaluation Specialist",
+      "url": "https://www.opentrain.ai/jobs/product-documentation-ai-evaluation-specialist--cmty60pxx000p0agm3aqfj5qv/",
+      "reason": "Ghana is eligible and pay is $90–$140/hr, but required background is Product Manager / certified Product Owner—not a match."
+    },
+    {
+      "id": "handshake-ai-red-teamer-cybersecurity-usa",
+      "organization": "Handshake",
+      "position": "AI Red Teamer, Cybersecurity",
+      "url": "https://jobs.ashbyhq.com/handshake/7f607c0b-291d-4c17-9897-6d8c5d35eb00/application",
+      "reason": "Posted ~2026-09-05; remote within the United States only; offensive security / malware-exploit evaluation focus."
+    },
+    {
+      "id": "opentrain-business-strategy-ai-eval-mbb-required",
+      "organization": "OpenTrain AI",
+      "position": "Business Strategy AI Evaluation Consultant",
+      "url": "https://www.opentrain.ai/jobs/business-strategy-ai-evaluation-consultant--cmtc1209n00140ajcglc5geq4/",
+      "reason": "High pay ($245–$280/hr) but requires management consulting experience at top-tier firms—not in profile."
+    }
+  ]
+}
